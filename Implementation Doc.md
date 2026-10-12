@@ -11,7 +11,7 @@ This document defines the data, UI contracts, architecture, tests, and operation
 
 The development implementation includes version-2 nodes, version-1 relationships, checked references, atomic joined exports, directory/network filters and shareable selections, a clustered map with one-hop partner context, device location, profiles, and bilingual static contribution/questionnaire drafts. Canonical reviewed nodes and relationships remain empty; synthetic fixtures are opt-in and visibly labelled. Functional checks and the remaining launch evidence are recorded in [docs/verification.md](docs/verification.md).
 
-The owner authorized development, creation of [yuna-yang/chinese-diaspora-atlas](https://github.com/yuna-yang/chinese-diaspora-atlas), and a dummy development contact. The repository has been created; creating it does not establish that code has been pushed or a site deployed. The dummy contact remains explicitly nonfunctional. A real private contact is still a public-launch gate.
+The owner authorized development, creation of [yuna-yang/chinese-diaspora-atlas](https://github.com/yuna-yang/chinese-diaspora-atlas), and a dummy development contact. Reviewed development source has been published to the repository; the public site has not been deployed. The dummy contact remains explicitly nonfunctional. A real private contact is still a public-launch gate.
 
 ## 2. Decisions and revision boundary
 

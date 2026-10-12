@@ -180,7 +180,7 @@ The implementation document owns full field/enums and URL rules. A consuming tas
 **Consumes:** tested code/artifact, owner release settings, reviewed data. **Produces:** versioned repository handoff and, when launch gates are satisfied, a tested public site.
 
 - [x] Create the authorized public repository and local `origin` remote; no token/credential is stored in project files.
-- [ ] Commit/push the reviewed implementation and document actual checks/remaining gates. Protect review boundaries; do not mark a draft branch as a published atlas.
+- [x] Commit/push the reviewed implementation and document actual checks/remaining gates. Protect review boundaries; do not mark a draft branch as a published atlas.
 - [ ] Build/test once and deploy the exact artifact through least-privilege Pages/OIDC. Reject demo mode, dummy delivery/private contacts, missing license decisions, insufficient/unapproved coverage, and failing checks.
 - [ ] Verify `/` and actual repository-subpath direct routes, exports, network panels, HTTPS geolocation, both locales, and attribution. Record commit/dataset hash/time/URL.
 - [ ] Exercise safe rollback retaining node/edge/contact removals and pruning invalid context. A deployment failure retains current safe output. Tag/changelog only a real accepted release; leave public-deploy steps pending otherwise.

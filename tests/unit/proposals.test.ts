@@ -23,6 +23,7 @@ it('excludes confidential questionnaire material from public proposals and issue
   expect(JSON.stringify(publicPart)).not.toContain('Confidential');
   expect(JSON.stringify(publicPart)).toContain('Approved statement');
   const url = proposalIssueUrl(draft, 'https://github.com/owner/atlas');
+  expect(new URL(url!).searchParams.get('template')).toBe('web-proposal.md');
   expect(new URL(url!).searchParams.get('body')!).not.toContain('Confidential');
   expect(new URL(url!).searchParams.get('body')!).toContain(
     'Approved statement',

@@ -15,7 +15,7 @@ This records development evidence, not public-launch approval. Product purpose i
 
 ## Checks observed locally
 
-Windows, Node 24.21.0, pinned npm workspace dependencies, headless Playwright Chromium:
+Windows, Node 24.21.0, pinned npm workspace dependencies, headless Playwright Chromium. The initial [Linux CI run](https://github.com/yuna-yang/chinese-diaspora-atlas/actions/runs/38306716718) also passed installation, data/types/lint/format/unit tests, both production browser paths and the canonical build:
 
 | Check                                          | Evidence                                                                                                                                                                                                                           |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -28,6 +28,8 @@ Windows, Node 24.21.0, pinned npm workspace dependencies, headless Playwright Ch
 | Resilience                                     | Device permission denial and blocked storage preserve manual search; rapid locale switching flushes pending search; coincident map nodes remain selectable.                                                                        |
 | Data recovery                                  | Invalid inputs leave prior exports intact; removing a fixture node regenerates empty JSON/CSV. Canonical rebuild removed demo profile paths and pruned the reserved empty-collection route.                                        |
 | Code review                                    | Fresh reviewer found four Important gaps; safe links, typed relationship corrections, period/verification context and crowded-scale edges were corrected. Characteristic patterns and selection normalization were also corrected. |
+
+GitHub draft handoff selects the supplied Markdown template explicitly because blank issues are disabled. This follows [GitHub’s documented template/body query parameters](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue). No Issue or outreach message was posted during testing.
 
 ## Performance evidence and limits
 
@@ -43,6 +45,6 @@ The automated development smoke threshold is broader than the proposed launch bu
 - Owner license/provenance acceptance, editorial capacity and independent review decisions.
 - Working private removal/reporting channel and tested non-GitHub editorial delivery. The authorized dummy contact cannot receive reports.
 - Full manual keyboard/focus/contrast, 200% text zoom and reduced-motion review, completed performance budgets and real provider/hosting verification.
-- Removal-safe deployment/rollback drill, repository review protections, verified Linux CI, exact tested artifact deployment and actual-host smoke checks.
+- Removal-safe deployment/rollback drill, repository review protections, exact tested artifact deployment and actual-host smoke checks.
 
 `npm run release:check` rejects missing coverage, demo mode, dummy channels and absent review/license/delivery/quality confirmations. Development source publication and public atlas deployment are separate milestones. No public site has been deployed.

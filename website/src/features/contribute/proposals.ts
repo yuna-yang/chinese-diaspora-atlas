@@ -81,5 +81,5 @@ export function proposalIssueUrl(d: ProposalDraft, repository: string | null) {
     !/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(repository)
   )
     return null;
-  return `${repository}/issues/new?${new URLSearchParams({ title: `Proposal: ${d.name.slice(0, 100)}`, body: 'Review candidate; not published.\n\n```json\n' + JSON.stringify(p, null, 2) + '\n```' })}`;
+  return `${repository}/issues/new?${new URLSearchParams({ template: 'web-proposal.md', title: `Proposal: ${d.name.slice(0, 100)}`, body: 'Review candidate; not published.\n\n```json\n' + JSON.stringify(p, null, 2) + '\n```' })}`;
 }
