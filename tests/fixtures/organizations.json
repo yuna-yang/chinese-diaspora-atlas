@@ -1,0 +1,59 @@
+[
+  {
+    "schema_version": 2,
+    "id": "example-collective",
+    "names": {
+      "zh": "示例社群",
+      "en": "Example Collective"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "zh": "面向中国离散社群的文化交流组织。",
+      "en": "A cultural exchange collective serving mainland Chinese diaspora communities."
+    },
+    "categories": ["community_culture"],
+    "keywords": ["文化", "culture"],
+    "locations": [
+      {
+        "city_id": "demo-city",
+        "country_code": "DK"
+      }
+    ],
+    "online_only": false,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "primary",
+    "institution_type": null,
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  }
+]

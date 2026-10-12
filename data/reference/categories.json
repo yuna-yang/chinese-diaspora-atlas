@@ -1,0 +1,28 @@
+[
+  {
+    "id": "community_culture",
+    "labels": { "en": "Community & culture", "zh": "社群与文化" }
+  },
+  {
+    "id": "student_alumni",
+    "labels": { "en": "Students & alumni", "zh": "学生与校友" }
+  },
+  {
+    "id": "professional",
+    "labels": { "en": "Professional", "zh": "专业社群" }
+  },
+  {
+    "id": "civic_advocacy",
+    "labels": { "en": "Civic & advocacy", "zh": "公民与倡议" }
+  },
+  { "id": "feminist", "labels": { "en": "Feminist", "zh": "女性主义" } },
+  { "id": "lgbtq", "labels": { "en": "LGBTQ+", "zh": "性少数社群" } },
+  { "id": "religion", "labels": { "en": "Religion", "zh": "宗教" } },
+  { "id": "mutual_aid", "labels": { "en": "Mutual aid", "zh": "互助" } },
+  { "id": "media", "labels": { "en": "Media", "zh": "媒体" } },
+  {
+    "id": "arts_intellectual",
+    "labels": { "en": "Arts & ideas", "zh": "艺术与思想" }
+  },
+  { "id": "other", "labels": { "en": "Other", "zh": "其他" } }
+]

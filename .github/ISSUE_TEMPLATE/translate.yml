@@ -1,0 +1,16 @@
+name: Translate / 补充翻译
+description: Provide accurate translations while preserving original organizational names.
+title: '[Translation] '
+body:
+  - type: input
+    id: organization_id
+    attributes:
+      label: Entry ID / 条目 ID
+    validations:
+      required: true
+  - type: textarea
+    id: translation
+    attributes:
+      label: Original and proposed translation / 原文与建议译文
+    validations:
+      required: true

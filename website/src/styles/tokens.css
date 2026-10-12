@@ -1,0 +1,15 @@
+:root {
+  --paper: #faf7f0;
+  --surface: #fffdf9;
+  --ink: #20392e;
+  --muted: #596b60;
+  --line: #dedfd4;
+  --pink: #edd0df;
+  --pink-ink: #71345b;
+  --green: #d9e9dd;
+  --yellow: #f3da8c;
+  --teal: #27634d;
+  --focus: #8b3275;
+  --radius: 20px;
+  --shadow: 0 8px 25px #20392e08;
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "schema_version": 2,
+    "id": "example-collective",
+    "names": {
+      "zh": "示例社群",
+      "en": "Example Collective"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "zh": "面向中国离散社群的文化交流组织。",
+      "en": "A cultural exchange collective serving mainland Chinese diaspora communities."
+    },
+    "categories": ["community_culture"],
+    "keywords": ["文化", "culture"],
+    "locations": [
+      {
+        "city_id": "demo-city",
+        "country_code": "DK"
+      }
+    ],
+    "online_only": false,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "primary",
+    "institution_type": null,
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  },
+  {
+    "schema_version": 2,
+    "id": "lantern-room",
+    "names": {
+      "en": "Lantern Room",
+      "zh": "灯笼书房"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "en": "A fictional initiative for testing the atlas. Not a verified organization.",
+      "zh": "用于测试地图的虚构组织，并非真实已核实条目。"
+    },
+    "categories": ["arts_intellectual"],
+    "keywords": ["文化", "culture"],
+    "locations": [
+      {
+        "city_id": "demo-berlin",
+        "country_code": "DE"
+      }
+    ],
+    "online_only": false,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/lantern-room"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/lantern-room/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "primary",
+    "institution_type": null,
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  },
+  {
+    "schema_version": 2,
+    "id": "rainbow-circle",
+    "names": {
+      "en": "Rainbow Circle",
+      "zh": "彩虹小组"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "en": "A fictional initiative for testing the atlas. Not a verified organization.",
+      "zh": "用于测试地图的虚构组织，并非真实已核实条目。"
+    },
+    "categories": ["lgbtq"],
+    "keywords": ["文化", "culture"],
+    "locations": [
+      {
+        "city_id": "demo-city",
+        "country_code": "DK"
+      }
+    ],
+    "online_only": false,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/rainbow-circle"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/rainbow-circle/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "primary",
+    "institution_type": null,
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  },
+  {
+    "schema_version": 2,
+    "id": "civic-library",
+    "names": {
+      "en": "Civic Library",
+      "zh": "市民图书馆"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "en": "A fictional initiative for testing the atlas. Not a verified organization.",
+      "zh": "用于测试地图的虚构组织，并非真实已核实条目。"
+    },
+    "categories": [],
+    "keywords": ["文化", "culture"],
+    "locations": [
+      {
+        "city_id": "demo-city",
+        "country_code": "DK"
+      }
+    ],
+    "online_only": false,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/civic-library"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/civic-library/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "institution",
+    "institution_type": "culture",
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  },
+  {
+    "schema_version": 2,
+    "id": "online-reading",
+    "names": {
+      "en": "Online Reading Circle",
+      "zh": "线上读书小组"
+    },
+    "translated_name_locales": [],
+    "aliases": [],
+    "descriptions": {
+      "en": "A fictional initiative for testing the atlas. Not a verified organization.",
+      "zh": "用于测试地图的虚构组织，并非真实已核实条目。"
+    },
+    "categories": ["community_culture"],
+    "keywords": ["文化", "culture"],
+    "locations": [],
+    "online_only": true,
+    "links": [
+      {
+        "kind": "website",
+        "url": "https://example.org/online-reading"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.org/online-reading/about",
+        "title": "About the example collective",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope", "location"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "activity_status": "unknown",
+    "affiliation": {
+      "kind": "unclear",
+      "explanation": {
+        "zh": null,
+        "en": null
+      },
+      "source_urls": []
+    },
+    "inclusion_basis": "The synthetic primary source documents mainland diaspora service abroad.",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12",
+    "kind": "primary",
+    "institution_type": null,
+    "founded_year": null,
+    "reach": null,
+    "public_contacts": [],
+    "information_basis": "public_documentation"
+  }
+]

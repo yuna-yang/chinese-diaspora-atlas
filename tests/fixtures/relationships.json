@@ -1,0 +1,125 @@
+[
+  {
+    "schema_version": 1,
+    "id": "library-space",
+    "source_id": "civic-library",
+    "target_id": "example-collective",
+    "direction": "directed",
+    "types": ["bridging", "linking"],
+    "forms": ["space_resources"],
+    "descriptions": {
+      "en": "Fictional library space support for community gatherings.",
+      "zh": "虚构图书馆提供社群活动空间。"
+    },
+    "classification_basis": {
+      "en": "Illustrative documented civic cooperation in the synthetic test network.",
+      "zh": "演示数据中的虚构公民合作，用于测试而非真实主张。"
+    },
+    "period": {
+      "start": "2025",
+      "end": null,
+      "label": {
+        "en": null,
+        "zh": null
+      }
+    },
+    "temporal_status": "current",
+    "source_city_id": null,
+    "target_city_id": null,
+    "sources": [
+      {
+        "url": "https://example.org/evidence/library-space",
+        "title": "Synthetic relationship evidence",
+        "accessed_at": "2026-10-12",
+        "supports": ["relationship", "classification", "period", "direction"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "information_basis": "public_documentation",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12"
+  },
+  {
+    "schema_version": 1,
+    "id": "reading-collaboration",
+    "source_id": "example-collective",
+    "target_id": "lantern-room",
+    "direction": "undirected",
+    "types": ["bonding"],
+    "forms": ["co_event_project"],
+    "descriptions": {
+      "en": "Fictional cross-city reading collaboration in 2025.",
+      "zh": "2025年的虚构跨城市读书合作。"
+    },
+    "classification_basis": {
+      "en": "Illustrative documented civic cooperation in the synthetic test network.",
+      "zh": "演示数据中的虚构公民合作，用于测试而非真实主张。"
+    },
+    "period": {
+      "start": "2025",
+      "end": "2025",
+      "label": {
+        "en": null,
+        "zh": null
+      }
+    },
+    "temporal_status": "past",
+    "source_city_id": null,
+    "target_city_id": null,
+    "sources": [
+      {
+        "url": "https://example.org/evidence/reading-collaboration",
+        "title": "Synthetic relationship evidence",
+        "accessed_at": "2026-10-12",
+        "supports": ["relationship", "classification", "period", "direction"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "information_basis": "public_documentation",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12"
+  },
+  {
+    "schema_version": 1,
+    "id": "rainbow-cooperation",
+    "source_id": "example-collective",
+    "target_id": "rainbow-circle",
+    "direction": "undirected",
+    "types": [],
+    "forms": ["ongoing_cooperation"],
+    "descriptions": {
+      "en": "Fictional cooperation with insufficient classification evidence.",
+      "zh": "尚无充分分类信息的虚构合作。"
+    },
+    "classification_basis": {
+      "en": null,
+      "zh": null
+    },
+    "period": {
+      "start": null,
+      "end": null,
+      "label": {
+        "en": null,
+        "zh": null
+      }
+    },
+    "temporal_status": "unknown",
+    "source_city_id": null,
+    "target_city_id": null,
+    "sources": [
+      {
+        "url": "https://example.org/evidence/rainbow-cooperation",
+        "title": "Synthetic relationship evidence",
+        "accessed_at": "2026-10-12",
+        "supports": ["relationship", "classification", "period", "direction"],
+        "reuse_basis": "original_summary"
+      }
+    ],
+    "information_basis": "public_documentation",
+    "last_verified": "2026-10-12",
+    "created_at": "2026-10-12",
+    "updated_at": "2026-10-12"
+  }
+]

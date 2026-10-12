@@ -1,0 +1,38 @@
+name: Add a community / 添加社群
+description: Propose a publicly documented mainland Chinese diaspora initiative.
+title: '[Community] '
+body:
+  - type: markdown
+    attributes:
+      value: 'This proposal is public. Do not share personal information, private invitations, exact venues, or confidential material. 此建议公开可见，请勿提交个人资料、私密邀请、精确场所或保密材料。'
+  - type: input
+    id: organization_name
+    attributes:
+      label: Organization name / 组织名称
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Public evidence URLs / 公开证据链接
+      description: Include an organization-owned public source and evidence of mainland diaspora service.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Original summary and inclusion rationale / 原创摘要与收录理由
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: City/country or online scope / 城市国家或线上范围
+      description: No addresses or meeting venues. 请勿填写地址或活动场所。
+  - type: checkboxes
+    id: permissions
+    attributes:
+      label: Publication permissions / 公开许可
+      options:
+        - label: I may share the original submitted material publicly under project contribution terms. 我有权按项目贡献条款公开分享提交的原创材料。
+          required: true

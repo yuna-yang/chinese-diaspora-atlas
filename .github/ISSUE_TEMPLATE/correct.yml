@@ -1,0 +1,19 @@
+name: Correct an entry / 修改条目
+description: Suggest an evidenced public correction. Use a real private channel for sensitive requests once configured.
+title: '[Correction] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Public proposals are not a private reporting channel. 请勿在此提交敏感报告。'
+  - type: input
+    id: organization_id
+    attributes:
+      label: Organization ID / 组织 ID
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction and supporting sources / 修改内容与来源
+    validations:
+      required: true

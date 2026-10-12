@@ -1,0 +1,19 @@
+name: Propose a relationship / 建议关系
+description: Propose a documented cooperation for review; relationship publication is not yet implemented.
+title: '[Relationship] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Only public evidence of meaningful cooperation. Mentions/shared identity do not establish a relationship. Do not publish sensitive partners or confidential testimony. 仅提供有实质合作的公开证据，请勿提交敏感伙伴或保密证词。'
+  - type: input
+    id: endpoints
+    attributes:
+      label: Organizations/institutions and known IDs / 组织机构与已知 ID
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Cooperation, period, direction, and public sources / 合作形式、时期、方向与公开来源
+    validations:
+      required: true

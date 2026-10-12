@@ -1,0 +1,19 @@
+name: Ordinary public removal / 普通公开移除
+description: Non-sensitive removal proposals only. A development placeholder cannot receive private reports.
+title: '[Removal] '
+body:
+  - type: markdown
+    attributes:
+      value: 'This is public. Do not include sensitive reasons or personal information. The real private reporting channel is not configured yet. 此表单公开，勿填写敏感原因或个人资料。真实私密报告渠道尚未配置。'
+  - type: input
+    id: organization_id
+    attributes:
+      label: Entry ID / 条目 ID
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Safe public rationale / 可安全公开的理由
+    validations:
+      required: true

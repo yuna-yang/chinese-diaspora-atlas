@@ -1,0 +1,135 @@
+{
+  "categories": [
+    {
+      "id": "community_culture",
+      "labels": {
+        "en": "Community & culture",
+        "zh": "社群与文化"
+      }
+    },
+    {
+      "id": "student_alumni",
+      "labels": {
+        "en": "Students & alumni",
+        "zh": "学生与校友"
+      }
+    },
+    {
+      "id": "professional",
+      "labels": {
+        "en": "Professional",
+        "zh": "专业社群"
+      }
+    },
+    {
+      "id": "civic_advocacy",
+      "labels": {
+        "en": "Civic & advocacy",
+        "zh": "公民与倡议"
+      }
+    },
+    {
+      "id": "feminist",
+      "labels": {
+        "en": "Feminist",
+        "zh": "女性主义"
+      }
+    },
+    {
+      "id": "lgbtq",
+      "labels": {
+        "en": "LGBTQ+",
+        "zh": "性少数社群"
+      }
+    },
+    {
+      "id": "religion",
+      "labels": {
+        "en": "Religion",
+        "zh": "宗教"
+      }
+    },
+    {
+      "id": "mutual_aid",
+      "labels": {
+        "en": "Mutual aid",
+        "zh": "互助"
+      }
+    },
+    {
+      "id": "media",
+      "labels": {
+        "en": "Media",
+        "zh": "媒体"
+      }
+    },
+    {
+      "id": "arts_intellectual",
+      "labels": {
+        "en": "Arts & ideas",
+        "zh": "艺术与思想"
+      }
+    },
+    {
+      "id": "other",
+      "labels": {
+        "en": "Other",
+        "zh": "其他"
+      }
+    }
+  ],
+  "countries": [
+    {
+      "code": "DK",
+      "names": {
+        "en": "Denmark",
+        "zh": "丹麦"
+      },
+      "aliases": ["丹麥"]
+    },
+    {
+      "code": "DE",
+      "names": {
+        "en": "Germany",
+        "zh": "德国"
+      },
+      "aliases": []
+    }
+  ],
+  "cities": [
+    {
+      "id": "demo-city",
+      "country_code": "DK",
+      "names": {
+        "en": "Demo Copenhagen",
+        "zh": "示例哥本哈根"
+      },
+      "aliases": [],
+      "latitude": 55.6761,
+      "longitude": 12.5683,
+      "source": {
+        "url": "https://example.org/geography",
+        "title": "Synthetic centroid",
+        "accessed_at": "2026-10-12",
+        "reuse_basis": "original_summary"
+      }
+    },
+    {
+      "id": "demo-berlin",
+      "country_code": "DE",
+      "names": {
+        "en": "Demo Berlin",
+        "zh": "示例柏林"
+      },
+      "aliases": [],
+      "latitude": 52.52,
+      "longitude": 13.405,
+      "source": {
+        "url": "https://example.org/geography",
+        "title": "Synthetic centroid",
+        "accessed_at": "2026-10-12",
+        "reuse_basis": "original_summary"
+      }
+    }
+  ]
+}
