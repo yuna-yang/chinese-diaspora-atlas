@@ -91,6 +91,15 @@
         "accessed_at": "2026-10-12",
         "supports": ["identity", "scope", "location"],
         "reuse_basis": "original_summary"
+      },
+      {
+        "url": "https://example.org/lantern-interview",
+        "title": "Fictional approved interview",
+        "accessed_at": "2026-10-12",
+        "supports": ["identity", "scope"],
+        "kind": "organization_statement",
+        "reuse_basis": "permission",
+        "license_note": "Synthetic fixture: approved for publication in demo only."
       }
     ],
     "activity_status": "unknown",
@@ -111,7 +120,18 @@
     "founded_year": null,
     "reach": null,
     "public_contacts": [],
-    "information_basis": "public_documentation"
+    "information_basis": "public_documentation",
+    "profile_basis": "both",
+    "interview": {
+      "excerpt": {
+        "en": "This fictional interview describes how our reading circle brings people together.",
+        "zh": "这段虚构访谈描述了我们的读书会如何让大家相聚。"
+      },
+      "date": "2026-10-12",
+      "attribution": "Fictional Lantern Room organizer",
+      "source_url": "https://example.org/lantern-interview",
+      "publication_permission": true
+    }
   },
   {
     "schema_version": 2,

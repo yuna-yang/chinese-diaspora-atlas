@@ -16,7 +16,8 @@ it('explains actual launch gates instead of reporting completed features as abse
     },
   );
   expect(result.status).toBe(1);
-  expect(result.stderr).toContain('Editorial');
+  expect(result.stderr).toContain('Private reporting');
+  expect(result.stderr).not.toContain('Editorial inbox');
   expect(result.stderr).toContain('Human');
   expect(result.stderr).not.toContain('migration');
 });

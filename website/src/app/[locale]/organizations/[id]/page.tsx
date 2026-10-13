@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import { loadDataset } from '../../../../lib/dataset';
 import type { Locale } from '../../../../lib/contracts';
 import { localizedText } from '../../../../lib/i18n';
-import Shell from '../../../../components/Shell';
-import Profile from '../../../../features/profile/Profile';
+import MinimalAtlas from '../../../../features/minimal/MinimalAtlas';
+
 export const dynamicParams = false;
 export async function generateStaticParams() {
   const ids = (await loadDataset()).organizations.map((o) => ({ id: o.id }));
@@ -20,7 +20,7 @@ export async function generateMetadata({
   const o = (await loadDataset()).organizations.find((o) => o.id === id);
   return o
     ? {
-        title: `${localizedText(o.names, locale).text} · Chinese Diaspora Atlas`,
+        title: `${localizedText(o.names, locale).text} 路 Chinese Diaspora Atlas`,
         description: localizedText(o.descriptions, locale).text,
       }
     : {};
@@ -34,9 +34,5 @@ export default async function Page({
     dataset = await loadDataset(),
     organization = dataset.organizations.find((o) => o.id === id);
   if (!organization) notFound();
-  return (
-    <Shell locale={locale}>
-      <Profile organization={organization} dataset={dataset} locale={locale} />
-    </Shell>
-  );
+  return <MinimalAtlas locale={locale} initialSelectedId={id} />;
 }

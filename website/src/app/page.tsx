@@ -1,15 +1,9 @@
-import { publicPath } from '../lib/paths';
+import MinimalAtlas from '../features/minimal/MinimalAtlas';
 export default function Root() {
   return (
     <html lang="en">
       <body>
-        <main>
-          <h1>Chinese Diaspora Atlas · 中国离散社群地图</h1>
-          <p>
-            <a href={publicPath('/en/')}>English</a> ·{' '}
-            <a href={publicPath('/zh-CN/')}>简体中文</a>
-          </p>
-        </main>
+        <MinimalAtlas locale="en" />
       </body>
     </html>
   );

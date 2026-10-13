@@ -158,6 +158,23 @@ export function validateRecords(
         'information_basis',
         'Organization-origin information needs publishable statement evidence',
       );
+    if (r.interview) {
+      const i = r.interview,
+        source = r.sources.find((s) => s.url === i.source_url);
+      if (
+        !validDate(i.date) ||
+        i.date > today ||
+        !safeUrl(i.source_url) ||
+        !source ||
+        source.kind !== 'organization_statement' ||
+        source.reuse_basis !== 'permission'
+      )
+        issue(
+          file,
+          'interview',
+          'Interview requires nonfuture date, public statement evidence and publication permission',
+        );
+    }
     if (r.activity_status !== 'unknown' && !support.has('activity'))
       issue(file, 'activity_status', 'Missing activity evidence');
     if (r.affiliation.kind !== 'unclear') {

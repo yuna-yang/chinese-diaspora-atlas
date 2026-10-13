@@ -1,50 +1,43 @@
-# Development verification — 2026-10-12
+# Development verification — 2026-10-13
 
-This records development evidence, not public-launch approval. Product purpose is in [Design Doc.md](../Design%20Doc.md); contracts are in [Implementation Doc.md](../Implementation%20Doc.md).
+This is evidence for the v0.7 development interface, not approval to publish a real atlas. See [Design Doc.md](../Design%20Doc.md), [Implementation Doc.md](../Implementation%20Doc.md), the [current plan](superpowers/plans/2026-10-13-minimal-atlas.md) and [archived v0.5 verification](archive/verification-v0.5.md).
 
 ## Implemented
 
-- Bilingual directory, search, filters, pagination, shareable node/relationship selections, browser history and locale switching.
-- Schema-v2 organizations/institutions, schema-v1 relationships, checked references, evidence/period/anchor rules and duplicate review.
-- Integrated clustered map with distinct equal-size node symbols, one-hop partner context, zoom-aware relationship patterns, direction and evidence panels. Coincident and non-geographical cooperation remains available in lists.
-- Optional browser device location with explicit activation, denial/error fallback, clear control and temporary in-memory coordinates.
-- Bilingual node profiles, partner evidence, period explanations, verification dates, founding/reach/public organizational contact context and labelled language fallback.
-- Atomic joined atlas/node/edge JSON, both CSVs, coverage counts and data-license download.
-- Add-node/add-edge/correction/translation/questionnaire drafts, previews and local JSON downloads. Typed relationship corrections work. Confidential and hidden-mode fields stay out of public Issue handoffs; placeholder email/removal channels remain disabled. No form claims delivery.
-- Contributor policies, proposed open licenses, public templates and read-only SHA-pinned CI. No deployment job.
+- Borderless geography and a gathered star graph; the 星星散/星星聚 title switches views. No search, type filters, persistent directory, hero/navigation/footer or website forms.
+- Floating About, icon-only location/clear, EN/CN and compact keyboard-operable zoom/reset controls. Independent memory-only cameras and graph drags survive language/view changes.
+- Selection-only profiles with public/interview/both provenance, approved fictional interview example, explicit translation fallback, dated cooperation, evidence and full-record GitHub links. Blank taps dismiss; pan, zoom, pinch and star dragging do not. About clears selection.
+- Compact generic `map.json` projection, city stars, coincident-star picker at zoom12, wrapped-world/antimeridian discovery, generic neutral cooperation lines, online-only nodes in the graph and mandatory provider attribution.
+- Bounded D3-force worker layout, deterministic seeds on worker failure, isolated nodes, ignored dangling links, stale-response guards, retained user drags and reduced-motion transitions.
+- Existing editorial eligibility, source validation, atomic full JSON/CSV/statistics exports, recovery and privacy projection remain. Classification metadata is optional and unused by the current UI. CSV includes explicit interview provenance.
+- Compatibility website routes open minimal About/profile destinations. Website contribution forms are deferred; GitHub remains the detailed-record/contributor destination.
 
-## Checks observed locally
+## Observed checks
 
-Windows, Node 24.21.0, pinned npm workspace dependencies, headless Playwright Chromium. The initial [Linux CI run](https://github.com/yuna-yang/chinese-diaspora-atlas/actions/runs/38306716718) also passed installation, data/types/lint/format/unit tests, both production browser paths and the canonical build:
+Windows, Node 24.21.0, pinned dependencies, Chromium and production static exports. External browser requests are mocked. Browser verification covers root and `/atlas-test/` exports; the canonical build was inspected separately.
 
-| Check                                          | Evidence                                                                                                                                                                                                                           |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Clean dependency installation                  | `npm ci` succeeded; dependency audit reported zero vulnerabilities. Install/build must run sequentially on Windows to avoid native-module locks.                                                                                   |
-| Data/schema/reference and unit/component tests | 78 tests passed, including canonical-schema synchronization, private proposal projection, period/fallback rendering and invalid-input recovery.                                                                                    |
-| TypeScript / lint / formatting                 | Checked with the repository scripts. Generated Next.js declarations are excluded from formatting/source.                                                                                                                           |
-| Root static demo                               | 19 production browser checks passed.                                                                                                                                                                                               |
-| `/atlas-test/` static demo                     | The same 19 browser checks passed, including direct routes/downloads and locale/selection preservation.                                                                                                                            |
-| Accessibility support                          | Axe found no serious/critical issues in tested bilingual atlas, contribution and institution-profile pages; tested 320 px reflow. This does not establish complete WCAG conformance.                                               |
-| Resilience                                     | Device permission denial and blocked storage preserve manual search; rapid locale switching flushes pending search; coincident map nodes remain selectable.                                                                        |
-| Data recovery                                  | Invalid inputs leave prior exports intact; removing a fixture node regenerates empty JSON/CSV. Canonical rebuild removed demo profile paths and pruned the reserved empty-collection route.                                        |
-| Code review                                    | Fresh reviewer found four Important gaps; safe links, typed relationship corrections, period/verification context and crowded-scale edges were corrected. Characteristic patterns and selection normalization were also corrected. |
+| Check                            | Evidence                                                                                                                                                                                                                                                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit/data/component suite        | 90 tests passed across 29 files. Includes generic projection, interview consent, explicit fallback, relationship dates, wrapped longitude queries, deterministic layout, anchored camera zoom and existing editorial/recovery checks.                                                                                      |
+| Source checks                    | TypeScript, ESLint, canonical validation and duplicate review passed. Dependency audit: zero vulnerabilities.                                                                                                                                                                                                              |
+| Root production browser flows    | Final complete suite: 23 checks passed, including touch pinch/drag, location camera retention, wrapped discovery, navigation controls and the 2,000-node stress check.                                                                                                                                                     |
+| Subpath production browser flows | 22 checks passed at `/atlas-test/`, plus the subsequent touch pinch/drag check. Includes worker asset loading, direct routes, wrapped geography and location camera preservation.                                                                                                                                          |
+| Canonical recovery               | Clean empty-data build succeeded; snapshot has no demo flag/nodes/links. Fictional and reserved placeholder profile paths are absent; canonical locale/404 browser checks passed.                                                                                                                                          |
+| Accessibility support            | Tested both languages at 320 px; axe found no serious/critical violations in the tested profile/About flows. Keyboard selection, Escape focus, blocked storage and reduced motion are covered. This is not complete WCAG certification.                                                                                    |
+| Independent review               | One fresh read-only reviewer found six Important gaps and no Critical issues. Wrapped longitude discovery, historical dates, GitHub record destinations, labelled fallback, About interpretation/privacy and visible navigation controls were corrected with regression checks. Language-action labels were also expanded. |
+| Visual inspection                | Desktop gathered profile and 320 px Chinese profile screenshots were inspected. Geographic screenshots use mock tiles and do not certify real-provider appearance.                                                                                                                                                         |
 
-GitHub draft handoff selects the supplied Markdown template explicitly because blank issues are disabled. This follows [GitHub’s documented template/body query parameters](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue). No Issue or outreach message was posted during testing.
+## Performance evidence and remaining work
 
-## Performance evidence and limits
+A synthetic 2,000-node/100-link graph uses 4× CPU slowdown, cold cache, configured 1.6 Mbps download / 750 Kbps upload / 150 ms latency and locally intercepted JSON plus mocked external requests. All repeated nodes share limited fixture geography; this does not establish hosted transport/compression or geographic diversity.
 
-The synthetic test uses 2,000 nodes (including multiple locations), 100 sparse relationships, cold browser cache, 4× CPU slowdown, configured 1.6 Mbps down / 750 Kbps up / 150 ms latency, and mocked external tiles. The dataset response is intercepted locally; this is a rendering stress test, not proof of hosted transport/compression. Geographic diversity is limited to two demo cities.
-
-Root repeat and subpath observations: LCP approximately 1.14–1.19 s; CLS 0.0142; browser-observed search render 394–428 ms including the 200 ms debounce. The full compact synthetic JSON is 2,388,193 bytes (about 2.28 MiB), versus the proposed 2 MiB target; gzip is 34,830 bytes, but hosted compression was not verified. Search after debounce was near the proposed 200 ms target and exceeded it on one repeat. These budgets remain open, rather than being silently relaxed. Initial route JS size, more varied geography, real hosting/network behavior and manual quality checks still need release evidence.
-
-The automated development smoke threshold is broader than the proposed launch budget. A passing stress test therefore does not certify the launch budgets. Raw local observations are generated in `test-results/performance.json`.
+The compact snapshot is 1,516,968 bytes (about 1.45 MiB), below the proposed 2 MiB target; local gzip is 24,772 bytes. Root/subpath observations including the final root run were about 35–41 seconds to render 2,000 stars, and 2.16–2.35 seconds to activate the last keyboard-picker entry. The latter includes Playwright scrolling/actionability and DOM work, not a pure handler timing. These are broad development smoke checks, not satisfaction of launch interaction/loading budgets. Initial transport/bundle costs, a scalable on-demand picker, browser paint/CLS metrics, varied geography and real hosting remain performance work. Raw current-run evidence is generated at `test-results/performance.json`.
 
 ## Launch gates still open
 
-- Thirty human-approved primary organizations across five countries, or an explicit owner revision; real connections require evidence rather than an edge quota. Canonical data is intentionally empty.
-- Owner license/provenance acceptance, editorial capacity and independent review decisions.
-- Working private removal/reporting channel and tested non-GitHub editorial delivery. The authorized dummy contact cannot receive reports.
-- Full manual keyboard/focus/contrast, 200% text zoom and reduced-motion review, completed performance budgets and real provider/hosting verification.
-- Removal-safe deployment/rollback drill, repository review protections, exact tested artifact deployment and actual-host smoke checks.
+- Thirty human-approved primary organizations across five countries, or an explicit owner revision. Canonical records remain empty; every demo organization/interview/connection is fictional.
+- Real private reporting contact and tested delivery. The configured dummy contact is nonfunctional. Website form delivery is no longer a first-release gate because forms are deferred.
+- Owner license/provenance acceptance and human evidence, consent and safety review.
+- Manual keyboard/contrast/text-zoom/reduced-motion review, performance budgets, provider/hosting verification and a removal-safe deployment drill.
 
-`npm run release:check` rejects missing coverage, demo mode, dummy channels and absent review/license/delivery/quality confirmations. Development source publication and public atlas deployment are separate milestones. No public site has been deployed.
+`npm run release:check` continues to reject missing coverage, dummy private contacts, demo mode and missing license/review/private-delivery/quality confirmations. No public website has been deployed.

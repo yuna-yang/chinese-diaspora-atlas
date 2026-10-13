@@ -78,6 +78,8 @@ const headers = [
   'last_verified',
   'links',
   'sources',
+  'profile_basis',
+  'interview',
 ];
 function cell(value: unknown) {
   let s =
@@ -125,6 +127,8 @@ export function serializeCsv(d: Dataset): string {
       o.last_verified,
       o.links,
       o.sources,
+      o.profile_basis ?? 'public_information',
+      o.interview,
     ]
       .map(cell)
       .join(','),

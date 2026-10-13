@@ -21,8 +21,6 @@ if (!projectConfig().privateRemovalUrl)
   problems.push(
     'Private reporting contact is absent or a development placeholder.',
   );
-if (!projectConfig().editorialUrl)
-  problems.push('Editorial inbox is absent or a development placeholder.');
 if (process.env.ATLAS_DEMO === '1' || process.env.NEXT_PUBLIC_DEMO === '1')
   problems.push(
     'Synthetic demo mode must not be published as a verified atlas.',
@@ -32,9 +30,7 @@ if (process.env.ATLAS_LICENSES_CONFIRMED !== '1')
 if (process.env.ATLAS_REVIEW_CONFIRMED !== '1')
   problems.push('Human evidence, consent and safety review is not confirmed.');
 if (process.env.ATLAS_DELIVERY_CONFIRMED !== '1')
-  problems.push(
-    'Non-GitHub editorial delivery and private reporting have not been tested.',
-  );
+  problems.push('Private reporting delivery has not been tested.');
 if (process.env.ATLAS_QUALITY_CONFIRMED !== '1')
   problems.push(
     'Accessibility, performance, removal/recovery and hosting verification are not confirmed.',

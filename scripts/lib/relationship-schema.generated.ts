@@ -51,7 +51,7 @@ export default {
         ]
       },
       "uniqueItems": true,
-      "minItems": 1
+      "minItems": 0
     },
     "descriptions": {
       "type": "object",

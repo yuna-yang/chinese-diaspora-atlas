@@ -1,0 +1,397 @@
+@import 'leaflet/dist/leaflet.css';
+:root {
+  color-scheme: light;
+  font-family: Arial, 'Noto Sans SC', sans-serif;
+  color: #322e29;
+  background: #edeae3;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+a {
+  color: #554525;
+  text-underline-offset: 3px;
+}
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #625025;
+  outline-offset: 3px;
+}
+.minimal-atlas,
+.canvas-stage,
+.geo-canvas,
+.graph-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+.floating {
+  background: rgba(251, 249, 244, 0.86);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 12px #322e2912;
+}
+.atlas-controls,
+.utility-controls {
+  position: absolute;
+  z-index: 800;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.atlas-controls {
+  top: max(14px, env(safe-area-inset-top));
+  left: max(14px, env(safe-area-inset-left));
+}
+.utility-controls {
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+}
+.atlas-title {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+.atlas-title strong {
+  font-weight: 600;
+}
+.atlas-title span {
+  font-size: 16px;
+  color: #756953;
+  letter-spacing: 0;
+}
+.active-language {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.locate-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  vertical-align: middle;
+}
+.demo-note {
+  position: absolute;
+  left: 14px;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  padding: 5px 8px;
+  z-index: 500;
+  font-size: 11px;
+}
+.status-note {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 28px);
+  font-size: 12px;
+  z-index: 700;
+  background: #faf8f0db;
+  text-align: center;
+}
+.status-note:empty {
+  display: none;
+}
+.status-note button {
+  font-size: 12px;
+}
+.star-marker {
+  background: none;
+  border: 0;
+}
+.star-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #796442;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 2px #fff;
+  line-height: 1;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  background: none;
+}
+.star-button.selected {
+  color: #342611;
+}
+.star-button small {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  font: 10px Arial;
+  background: #faf8f0;
+  padding: 2px 3px;
+  color: #332a20;
+}
+.visitor-marker span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #326d94;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #326d9470;
+}
+.leaflet-container {
+  background: #edeae3;
+  font: inherit;
+}
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  background: #faf8f0ce !important;
+}
+.graph-canvas {
+  touch-action: none;
+  background: radial-gradient(ellipse at center, #fffdf5 0, #edeae3 100%);
+}
+.graph-scene {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  pointer-events: none;
+  --inverse: 1;
+}
+.graph-star {
+  position: absolute;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(var(--inverse));
+  animation: star-arrive 0.65s ease-out;
+}
+.graph-edges {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.graph-edges line {
+  stroke: #796850;
+  stroke-opacity: 0.42;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.graph-reset {
+  position: absolute;
+  right: 14px;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 20;
+  font-size: 23px;
+}
+.profile-panel,
+.about-panel,
+.star-picker {
+  position: absolute;
+  z-index: 1000;
+  padding: 26px;
+  max-height: calc(100dvh - 100px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.profile-panel {
+  right: 14px;
+  top: 82px;
+  width: min(390px, calc(100% - 28px));
+}
+.profile-panel h1,
+.about-panel h1 {
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 10px 32px 16px 0;
+}
+.profile-panel h2,
+.about-panel h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 22px;
+}
+.profile-panel small {
+  font-size: 11px;
+  color: #6c6256;
+}
+.profile-panel ul {
+  padding-left: 18px;
+}
+.profile-panel li {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+.profile-panel p {
+  overflow-wrap: anywhere;
+}
+.panel-close {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  font-size: 25px;
+}
+.profile-panel blockquote {
+  margin: 22px 0;
+  padding-left: 14px;
+  border-left: 1px solid #c5baa9;
+}
+.about-panel {
+  left: 50%;
+  top: 82px;
+  transform: translateX(-50%);
+  width: min(600px, calc(100% - 28px));
+}
+.about-panel > button {
+  padding-left: 0;
+}
+.star-picker-trigger {
+  position: absolute;
+  left: 14px;
+  top: 75px;
+  z-index: 850;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.star-picker-trigger:focus {
+  clip-path: none;
+  width: auto;
+  height: auto;
+  background: #faf8f0;
+}
+.star-picker {
+  left: 14px;
+  top: 82px;
+  max-width: calc(100% - 28px);
+  display: flex;
+  flex-direction: column;
+}
+.star-picker button {
+  text-align: left;
+}
+@keyframes star-arrive {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .atlas-controls {
+    left: 10px;
+    top: max(10px, env(safe-area-inset-top));
+    gap: 2px;
+  }
+  .utility-controls {
+    right: 10px;
+    top: max(10px, env(safe-area-inset-top));
+    gap: 2px;
+  }
+  .atlas-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 8px;
+  }
+  .atlas-title span {
+    display: none;
+  }
+  .atlas-controls > button:not(.atlas-title) {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .utility-controls > button {
+    font-size: 12px;
+    padding: 8px;
+    min-width: 44px;
+  }
+  .profile-panel {
+    left: 10px;
+    right: 10px;
+    top: auto;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: auto;
+    max-height: 60dvh;
+    padding: 20px;
+  }
+  .about-panel {
+    top: 72px;
+    max-height: calc(100dvh - 90px);
+    padding: 20px;
+  }
+  .demo-note {
+    left: 10px;
+    bottom: 3px;
+  }
+  .status-note {
+    bottom: 20px;
+    width: calc(100% - 28px);
+  }
+  .graph-reset {
+    bottom: 28px;
+  }
+}
+
+.map-tools {
+  position: absolute;
+  left: 14px;
+  top: 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 450;
+}
+.map-tools button {
+  font-size: 20px;
+}
+.map-tools button:last-child {
+  font-size: 23px;
+}
+@media (max-width: 600px) {
+  .map-tools {
+    left: 10px;
+    top: 72px;
+  }
+}
