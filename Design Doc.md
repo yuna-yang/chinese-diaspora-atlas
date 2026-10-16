@@ -2,8 +2,8 @@
 
 ### An Open Atlas of Chinese Diaspora Communities and Civic Connections
 
-**Product Design — v0.7**  
-**Updated:** 2026-10-13  
+**Product Design — v0.8**  
+**Updated:** 2026-10-15  
 **Project:** Open source · Bilingual (中文 / English) · Participatory mapping  
 **Companion documents:** [Implementation Doc.md](Implementation%20Doc.md) defines technical contracts; the [implementation plan](docs/superpowers/plans/2026-10-12-atlas-release.md) tracks delivery. This document defines what the product is for, what it includes, and how it should feel.
 
@@ -185,6 +185,12 @@ Public-information cards provide original factual summaries, public source links
 
 Interview participation is optional and does not determine inclusion, prominence, ordering, or card size. Publish only approved excerpts and attribution; keep raw recordings, transcripts, private contact details, and consent records outside the public repository. Interview subjects' identities must not appear by default: use approved organizational attribution or omit an excerpt when safe attribution is unavailable. These cards describe organizations, not personal organizer profiles.
 
+### Profile development: questionnaire and evidence integration
+
+The compact first-release card remains the starting point. As approved research material becomes available, the expanded profile should organize it into: overview (name, location, activities, languages, mission, public contacts); documented activity timeline; relationship map; selected attributed organizational questionnaire responses; safe aggregated community experiences; an evidence panel; and contribution tools for corrections, nominations, evidence, and interview requests. These expanded interactions are subsequent-release work, not a requirement for a standalone profile page at launch.
+
+An **Inspect Evidence** interaction should explain the source, relevant dates, verification status, review history, and uncertainty behind each published attribute, activity, or relationship. The first release can expose this detail through its GitHub record. An organization-wide “verified” badge must not substitute for claim-specific evidence. Individual questionnaires must never appear as personal records in an organization profile.
+
 ### Phone and desktop
 
 Both phone and desktop use the same borderless canvas and minimal floating title/About controls. Desktop profiles can float beside a selected star or along an edge; phone profiles can use a compact bottom sheet with an explicit close action. Panels should occupy only the space needed for reading and leave enough canvas exposed for outside-tap dismissal. Respect mobile safe areas, dynamic viewport height, portrait/landscape layouts, and long bilingual text.
@@ -207,22 +213,63 @@ Profiles retain their public-information/interview evidence labels in both views
 
 Auto-location is optional. Manual exploration works when permission is denied, location is unavailable, or the map provider fails. Device position does not silently restrict the displayed collection or rank organizations by proximity. No continuous tracking is needed.
 
-## 6. Discovery, outreach, and questionnaire
+## 6. Discovery, outreach, and participatory questionnaires
 
 The atlas begins with public websites/social accounts, event announcements/archives, public directories, news/interviews, institutional records, and community recommendations. Inclusion does not require a response to outreach. Automated discovery may assist a later version where permitted; this release uses manual curation and human publication review.
 
-Future direct outreach can use public organizational mailboxes/social accounts, events, or introductions. It must be personalized, transparent, and non-intrusive. This specification does not authorize the development agent to send messages or contact organizations automatically.
+### Main feature: two perspectives, one continuing investigation
 
-A voluntary questionnaire may support editorial research, through a documented process linked from GitHub. An on-site questionnaire form is deferred. The questionnaire is intended to take about five minutes:
+**The atlas supplies a public map of organizations and relationships; two complementary questionnaires investigate how those organizations understand their work and how individuals actually encounter them.** Findings return to participants through reporting and the atlas, while contributions generate corrections, missing knowledge, and further reporting leads.
 
-1. What does your organization do?
-2. Which organizations or institutions have you worked with?
-3. What forms did those relationships take?
-4. Can you describe one concrete collaboration?
-5. Are there other initiatives the atlas should include?
-6. Which information may be published?
+Inspired by *The Housing Games / ParticipAid*, structured participation is a core editorial feature of the product's development. It should produce comparable exploratory empirical data, reveal differences between organizational perspectives and individual experiences, and connect individual experience, organizational knowledge, journalistic investigation, and continuing public participation. These differences are questions to investigate, not assumed findings or automatic measures of organizational performance.
 
-Explain whether material will be submitted publicly or privately, request explicit publication permission, and keep confidential responses outside the public repository. Follow-up interviews can investigate histories, local relationships, constraints, and participation. Interviews are research methods, not requirements for inclusion or automated publication.
+- **Organization questionnaire:** For organizers or organizational representatives. Covers activities and participation, resources and sustainability, institutional relationships, outreach, and public representation. Selected responses may enrich profiles when attributed and approved for publication.
+- **Individual questionnaire:** For diaspora individuals, including participants and nonparticipants. Covers discovery, participation, barriers, civic relationships, unmet needs, and reporting questions. Raw responses remain private; public findings use safe aggregates.
+
+The detailed question banks are in Appendix A. They are candidate questions, not a finalized instrument or a promise that every question fits a five-minute form. Backlog decisions include short forms versus interviews and simultaneous versus staged launch.
+
+Participation can happen through website forms when available, email, interviews, direct outreach, and community referrals. Outreach must be personalized, transparent, and non-intrusive. This specification does not authorize the development agent to send messages or contact organizations automatically. Interviews and questionnaires are voluntary research methods; neither is a condition of inclusion, prominence, ordering, or card size.
+
+**Release boundary:** The minimal first-release website and its compact profile panels remain as specified in Sections 2–5. Questionnaire procedures can initially be documented through GitHub with a real private collection route; confidential answers must never be requested in public Issues. Website forms, a dedicated findings destination, and expanded profile interactions are subsequent product work in Appendix B. The main feature described here establishes their editorial purpose and safeguards without making all of those interfaces launch requirements.
+
+### Comparing organizational intentions and individual experiences
+
+| Dimension | Organization questionnaire | Individual questionnaire |
+| --- | --- | --- |
+| Discoverability | How organizations advertise | How individuals discover events |
+| Accessibility | Who organizations intend to reach | Who encounters barriers |
+| Participation | Opportunities offered to members | Activities members actually undertake |
+| Institutional connections | Collaborations organizations report | Opportunities individuals obtain |
+| Community needs | Challenges identified by organizers | Needs identified by individuals |
+| Public visibility | How organizations describe themselves | Which organizations people actually know |
+
+Reporting can ask whether organizations reach their intended participants, why initiatives are difficult to discover, whether nominally public events are accessible to newcomers, whether institutional partnerships create opportunities for individuals, and what social relationships result from participation. Comparison must account for differences in respondents, scope, periods, and question wording; apparent discrepancies require follow-up reporting.
+
+### Reliability and transparent limits
+
+Open submissions and snowball sampling will not produce a representative survey of the global Chinese diaspora. The goal is a **transparent, verifiable exploratory dataset**:
+
+- Define a limited pilot geography or organizational scope, separately from the atlas's longer-term global coverage.
+- Build an initial organization list independently from public records; record contacts and responses.
+- Distinguish direct recruitment, open submissions, and referrals. Recruit individuals through organizations and independently, including people who do not participate in organizations.
+- Record respondent roles, collection dates/methods, recruitment routes, and questionnaire versions.
+- Verify factual claims through public records or additional interviews; preserve self-reports as attributed testimony.
+- Publish response counts, missing data, sampling limitations, and the relevant question wording with findings.
+- Do not present nonprobability survey percentages as population estimates or infer causality from reported associations.
+
+### Returning findings to readers and contributors
+
+Questionnaire results must not all be placed in About. The intended content roles are:
+
+| Surface | Content role |
+| --- | --- |
+| Atlas | Approved organizational attributes, documented activities/relationships, selected attributed findings, and links to relevant reporting |
+| Organization profile | Organizational perspective, outreach/challenges, verified activities/collaborations, sources and claim status, corrections; safe aggregated community findings only after editorial review |
+| Explore Findings — subsequent release | Quantitative results, comparisons, geographic/thematic visualizations, interviews, explanatory reporting, unresolved questions, sample sizes, and limitations |
+| Contribute — subsequent release | Both questionnaires; missing-organization nominations; corrections; collaboration evidence; experiences/reporting questions; an option to request an interview |
+| About & Methodology | Inclusion, recruitment/sampling, questionnaire wording, verification, consent/privacy, limitations, and editorial methods; detailed methods remain in the repository initially |
+
+The participation cycle is contribution → editorial verification → approved map/profile updates or reported findings → further questions and contributions. A submission is never automatic publication. How contributors learn whether their input changed the atlas or reporting remains an explicit backlog decision.
 
 ## 7. Evidence and editorial principles
 
@@ -234,13 +281,22 @@ Primary sources are preferred. Contested claims need corroboration. Dates descri
 
 Explain sources, coverage gaps, participation bias, verification dates, and the difference between relationship characteristics and cooperation forms. Counts describe recorded coverage, not population, representativeness, social isolation, or civic success.
 
+### Claim-specific verification
+
+Do not label an entire organization “verified.” Each published claim needs identifiable sources, relevant dates, a verification status, and a review history. Statuses should distinguish **independently corroborated**, **confirmed by an involved party**, **self-reported**, **under review**, **disputed**, and **historical or outdated**. Review status does not by itself authorize publication: unpublished submissions and sensitive claims remain outside public outputs until editorial approval. Preserve the evidenced period and source basis when a claim becomes historical or outdated.
+
+Organizational questionnaire statements are attributed self-reports unless additional evidence supports a stronger status. Confirmation by an involved party is distinct from independent corroboration. Inspect Evidence should show what supports a claim and what remains uncertain.
+
 ## 8. Privacy and safety
 
 - Publish organizations and institutions, never private individuals, members, attendance patterns, or organizer profiles.
 - Use city-level approximate locations by default. Country-only or online-only scope is available when truthful; withhold an entry if even coarse disclosure creates a risk.
 - Public organizational contact information means a verified organization-owned contact page or general role mailbox. Do not publish personal addresses/numbers or private invitation links.
 - Review sensitive relationships independently of node safety: publishing a harmless organization does not make every partner/funder connection safe.
-- Keep confidential interviews, private submissions, consent records, precise locations, and raw source archives out of Git history and public exports.
+- Keep confidential interviews, raw individual/organizational questionnaires, private submissions, contact and consent records, precise locations, and sensitive verification notes out of Git history and public exports.
+- Separate consent to participate from consent to publish. Attribute approved organizational self-reports; do not treat participation as blanket publication permission.
+- Publish individual findings primarily in suitably large aggregates. Suppress small or potentially identifying groups, and review organization-specific or city-level findings for re-identification risk before publication. No numeric publication threshold is agreed yet; see Appendix B.
+- Do not publish private organizational relationships without editorial safety review, even when disclosed in a questionnaire.
 - Visitor device coordinates remain temporary browser memory; they do not enter URLs, storage, exports, analytics, or application logs. Explain that viewport tile requests can expose the approximate viewed area to the map provider.
 - Provide correction/removal routes for nodes, edges, and individual details. For credible safety concerns, hide first and investigate privately.
 - Removing an organization also removes its current incident relationships and connected institutions that no longer qualify. Do not restore deleted sensitive material during rollback.
@@ -254,6 +310,12 @@ Organizations and readers can nominate initiatives, correct records, add evidenc
 The minimal website directs public nominations, corrections, translations, and documented cooperation proposals to GitHub from About or the selected profile. An on-site contribution form is future work. Private reporting uses a real private channel; sensitive interview/questionnaire material must not be uploaded to public Issues or the repository. Submission remains a proposal, never immediate publication.
 
 Maintainers document evidence standards, review outcomes, appeals, disputes, sensitive reporting, licenses, and responsibilities. Open-source participation does not mean all submitted information must become public. Public-source summaries and reusable reference data must have appropriate provenance and licenses; source attribution alone does not authorize copying text or media.
+
+### Public and restricted research data
+
+The product requires a clear separation between a **public database** of approved organizations, activities, relationships, publishable sources, and approved aggregate findings, and a **restricted research database** containing raw questionnaire responses, contacts, consent records, unpublished interviews, and sensitive verification notes. Restricted material belongs outside the public GitHub repository.
+
+The research model needs organization questionnaire responses, individual questionnaire responses, recruitment/collection metadata, claims, sources, verification records, approved aggregate findings, contributions/corrections, and editorial revisions. These are design requirements for future technical specification, not a claim that the current schemas implement them. Exact schemas, access controls, and publication mechanics belong in the implementation document.
 
 ## 10. Visual identity
 
@@ -279,6 +341,128 @@ First-release acceptance requires a borderless bilingual 散/聚 canvas on phone
 
 The implementation document supplies exact schemas, route/filter rules, test cases, dependencies, performance budgets, and release gates. Changes to those mechanics must preserve this product's inclusive collection, evidenced relationships, and privacy rules.
 
-**Revision boundary:** v0.7 retains the EU-first open proposal and 散/聚 concept, and adopts the owner's minimal-map direction referencing Queering the Map. It supersedes earlier requirements for differentiated node/link styles, classification controls, a persistent directory, decorative page framing, standalone profile/data pages, and on-site contribution/questionnaire forms. One generic organizational node and one generic cooperation link are the initial model; richer types remain future work. The v0.5 implementation and technical plan still describe the earlier, broader interface and must be reconciled before development of this revision. This document does not claim the redesigned UI already exists or authorize outreach.
+**Revision boundary:** v0.8 adds the two-questionnaire participatory research model, claim-specific evidence, safe publication rules, and public/restricted research-data separation. Detailed question banks are reference material; expanded website destinations and interactive concepts remain backlog work. The minimal first-release boundary is retained. v0.7 retains the EU-first open proposal and 散/聚 concept, and adopts the owner's minimal-map direction referencing Queering the Map. It supersedes earlier requirements for differentiated node/link styles, classification controls, a persistent directory, decorative page framing, standalone profile/data pages, and on-site contribution/questionnaire forms. One generic organizational node and one generic cooperation link are the initial model; richer types remain future work. The v0.5 implementation and technical plan still describe the earlier, broader interface and must be reconciled before development of this revision. This document does not claim the redesigned UI already exists or authorize outreach.
 
-**Core proposition:** 星散 is a participatory atlas of Chinese diaspora communities and their relationships with wider civic ecosystems. Make dispersed collective life discoverable, and invite contribution, correction, and continued growth.
+**Core proposition:** 星散 is a participatory atlas of Chinese diaspora communities and their relationships with wider civic ecosystems. The map documents organizations and relationships; complementary questionnaires investigate organizational knowledge and individual experience; published findings invite correction, further reporting, and continued public participation.
+
+## Appendix A. Candidate questionnaire banks
+
+These questions are retained for instrument design and piloting. Final wording, answer options, time periods, skip logic, translations, and the division between short forms and interviews still need to be settled. They are not findings.
+
+### A1. Organization questionnaire
+
+**Respondents:** Organizers or organizational representatives.
+
+**Activities and participation**
+
+- What kinds of activities does the organization organize?
+- How frequently are activities held?
+- Who are the intended participants?
+- How do people discover the organization?
+- How are new participants recruited?
+- Can ordinary participants propose or organize activities?
+- Which groups are difficult to reach?
+
+**Resources and sustainability**
+
+- What funding sources support the organization?
+- How many active organizers and volunteers are involved?
+- Does it have a regular venue?
+- Has it applied for public funding?
+- What are its major difficulties: funding, venues, language, bureaucracy, recruitment, or something else?
+- What helps the organization remain active?
+
+**Networks and institutions**
+
+- Which organizations has it collaborated with during the past year?
+- What did the collaborations involve?
+- Has it worked with local NGOs, universities, libraries, cultural institutions, or municipalities?
+- How did these relationships begin?
+- What resources or opportunities emerged from them?
+- Has it encountered barriers when approaching local institutions?
+- Which organizations would it like to collaborate with?
+
+**Public representation**
+
+- Has the organization received media coverage?
+- What aspects of its work are misunderstood or overlooked?
+- What issues would it like journalists to investigate?
+- Can it provide sources confirming activities and collaborations?
+
+### A2. Individual questionnaire
+
+**Respondents:** Diaspora individuals, including participants and nonparticipants.
+
+**Discovery**
+
+- How do you discover Chinese-speaking organizations and events?
+- Which information platforms do you rely on?
+- Have you searched for an organization but been unable to find it?
+- Have you discovered events only after they happened?
+
+**Participation**
+
+- Have you attended community activities during the past year?
+- How did you discover your most recent activity?
+- Did you return afterward?
+- Have you volunteered or helped organize activities?
+- Have you introduced someone else to an organization?
+
+**Barriers**
+
+- Have you wanted to attend an activity but decided not to?
+- Why: language, cost, location, scheduling, uncertainty, or lack of existing connections?
+- Have you encountered activities that appeared publicly accessible but were difficult to join?
+
+**Relationships and civic life**
+
+- Have community activities introduced you to people outside your existing networks?
+- Have they introduced you to local institutions or other civic organizations?
+- Have you subsequently participated in activities outside Chinese-speaking communities?
+- Have you learned about a local public issue through an organization?
+- Have you contacted a public institution because of information or support received through a community organization?
+
+**Unmet needs**
+
+- What organizations or activities do you wish existed?
+- What information would make participation easier?
+- What experiences are missing from media coverage?
+- What would you want journalists to investigate?
+
+## Appendix B. Product backlog and open decisions
+
+The main content defines the participatory research purpose and evidence requirements. The items below retain additional interface ideas and unresolved choices without expanding first-release acceptance. Sequencing is not yet agreed.
+
+### B1. Findings, contribution, and expanded profiles
+
+- Build **Explore Findings** for survey results, organizational/individual comparisons, geographic and thematic visualizations, interviews, explanatory reporting, and unresolved questions. Display sample sizes and methodological limitations with the findings.
+- Build **Contribute** with both questionnaires, nominations, corrections, collaboration evidence, experience/reporting-question submissions, and interview requests. Explain public versus private handling before collection.
+- Expand organization profiles with the overview, activity timeline, relationship map, organizational perspective, safe aggregated community findings, Inspect Evidence panel, and contribution tools described in Section 4.
+- Develop **About & Methodology** access to inclusion criteria, sampling/recruitment, questionnaire wording, verification, privacy/consent, and limitations. Findings have their own editorial home rather than being buried in About.
+- Specify the research entities and the public/restricted data separation in the implementation document before building collection and publication workflows.
+
+### B2. Interactive concepts beyond conventional charts
+
+The atlas does not naturally have a personalized calculator like *The Housing Games*. Its interactions should derive from geographic, relational, and participatory data. These concepts remain exploratory.
+
+| Concept | Reader interaction | Evidence and publication condition |
+| --- | --- | --- |
+| **Discover your civic ecosystem** | Select a city and interests; explore matching organizations/activities, surrounding institutions, public contacts, and possible participation opportunities | Introduces discovery controls beyond the minimal release; use documented connections and safe public contact information |
+| **How did you discover your community?** | Answer a short interactive question, compare with surveyed participants, and explore relevant differences | Disclose sampling limits; any contribution to the actual questionnaire requires a separate consent process |
+| **Organizers versus participants** | Compare outreach channels, accessibility barriers, and participation opportunities reported by organizations and individuals | Highlight questions for further investigation; do not automatically declare discrepancies or rank organizations |
+| **The network behind an event** | Select an activity to reveal organizers, venue providers, collaborators, funders, and evidence for each connection | Show how collective activity is materially organized using documented, editorially approved relationships |
+| **Contribute what is missing** | Explore incomplete areas, suggest organizations/events/relationships, provide supporting evidence, and see approved contributions enter the map | Review every contribution before publication; completeness gaps do not prove the absence of community activity |
+| **What should we investigate next?** | Explore emerging reporting questions, submit questions/evidence, offer to participate, and follow later updates/publications | Keep private evidence and participation details in the restricted research workflow |
+
+### B3. Decisions still open
+
+- Should both questionnaires launch simultaneously or in stages?
+- Which questions belong in short forms, and which require interviews?
+- How can individuals who are not connected to organizations be recruited?
+- Should profiles display selected organizational survey responses directly or primarily link to aggregate findings?
+- What interactive presentation makes the two perspectives most useful to readers?
+- How can readers contribute to a reporting question after viewing the results?
+- How should contributors learn whether their submissions changed the atlas or subsequent reporting?
+- How much data is needed before organization-specific or city-level findings can be safely published, and how should suppression and editorial review be applied?
+
+These decisions must be resolved through piloting and editorial review rather than assumed from the question banks or prototype interactions.
