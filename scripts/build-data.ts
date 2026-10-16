@@ -8,6 +8,7 @@ import {
   serializeRelationshipsCsv,
 } from './lib/exports';
 import { computeStatistics } from './lib/statistics';
+import { buildMapSnapshot } from './lib/map-snapshot';
 const demo = process.env.ATLAS_DEMO === '1';
 const { records, refs, relationships } = await loadInput(demo);
 const generated = new Date().toISOString();
@@ -34,6 +35,10 @@ await mkdir(tmp);
 try {
   await Promise.all([
     copyFile('LICENSE-DATA', path.join(tmp, 'LICENSE-DATA')),
+    writeFile(
+      path.join(tmp, 'map.json'),
+      JSON.stringify(buildMapSnapshot(dataset, demo)) + '\n',
+    ),
     writeFile(
       path.join(tmp, 'atlas.json'),
       JSON.stringify(dataset, null, 2) + '\n',

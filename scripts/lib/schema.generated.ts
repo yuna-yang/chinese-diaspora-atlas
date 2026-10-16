@@ -549,6 +549,95 @@ export default {
         "organization_contribution",
         "organization_reviewed"
       ]
+    },
+    "profile_basis": {
+      "enum": [
+        "public_information",
+        "interview",
+        "both"
+      ]
+    },
+    "interview": {
+      "type": "object",
+      "properties": {
+        "excerpt": {
+          "type": "object",
+          "properties": {
+            "zh": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "en": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600,
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "zh",
+            "en"
+          ],
+          "additionalProperties": false,
+          "anyOf": [
+            {
+              "properties": {
+                "zh": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "properties": {
+                "en": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "\\S"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publication_permission": {
+          "const": true
+        }
+      },
+      "required": [
+        "excerpt",
+        "date",
+        "attribution",
+        "source_url",
+        "publication_permission"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -589,9 +678,6 @@ export default {
       },
       "then": {
         "properties": {
-          "categories": {
-            "minItems": 1
-          },
           "institution_type": {
             "type": "null"
           }
@@ -600,7 +686,50 @@ export default {
       "else": {
         "properties": {
           "institution_type": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "profile_basis"
+        ],
+        "properties": {
+          "profile_basis": {
+            "enum": [
+              "interview",
+              "both"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "interview"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "interview"
+        ]
+      },
+      "then": {
+        "required": [
+          "profile_basis"
+        ],
+        "properties": {
+          "profile_basis": {
+            "enum": [
+              "interview",
+              "both"
+            ]
           }
         }
       }

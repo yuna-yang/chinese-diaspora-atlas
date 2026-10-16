@@ -4,12 +4,12 @@ An open-source bilingual atlas of mainland Chinese diaspora communities and thei
 
 - [Product design](Design%20Doc.md): vision, scope, editorial framework, safety, and visual identity.
 - [Technical implementation specification](Implementation%20Doc.md): schemas, interaction contracts, architecture, verification, and release gates.
-- [Delivery plan](docs/superpowers/plans/2026-10-12-atlas-release.md): task order, interfaces, and actual progress.
+- [Delivery plan](docs/superpowers/plans/2026-10-13-minimal-atlas.md): task order, interfaces, and actual progress.
 - [简体中文](README.zh-CN.md)
 
 ## Development status
 
-This is a working development build, not a published atlas. It implements the bilingual directory, URL filters/selections, clustered geographical map with civic connections, optional device location, organization/institution profiles, evidenced relationship lists, founding/reach/public-contact context, joined JSON/CSV exports, and static contribution/questionnaire drafts. Private answers are excluded from public handoffs. See [verification evidence and launch gates](docs/verification.md).
+This development build implements the minimal bilingual atlas: borderless geography with star markers, a draggable gathered graph, the 星星散/星星聚 title toggle, icon-only location, EN/CN, small zoom/reset controls, About and selection-only profile panels. Cards distinguish public sources from explicitly approved interviews and link to fuller GitHub records. Search, typed filters, a permanent directory and website forms are deferred; records, contributions and full JSON/CSV exports live in the repository. See [verification evidence and launch gates](docs/verification.md).
 
 The canonical reviewed collection is empty. Demo records are synthetic, visibly labelled, and kept in test fixtures. A demo build must never be presented as verified community data. The private reporting contact is a nonfunctional development placeholder until the owner supplies a real channel.
 
@@ -51,7 +51,7 @@ Read the product criteria before proposing nodes or relationships. Use public or
 
 Public GitHub Issues, Pull Requests, and Git history remain public. Do not use them for sensitive removal reports. The real private channel is not configured yet; the development placeholder cannot receive reports. Human evidence/safety review is required before real records enter the canonical collection.
 
-The owner has authorized this public repository. Public site deployment remains gated on reviewed data, real reporting/submission channels, license/provenance decisions, and passing checks. See the implementation document for removal-safe recovery.
+The owner has authorized this public repository. Public site deployment remains gated on reviewed data, a real private reporting channel, license/provenance decisions, and passing checks. See the implementation document for removal-safe recovery.
 
 ## License
 

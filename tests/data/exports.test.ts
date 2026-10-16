@@ -23,7 +23,7 @@ it('neutralizes formula strings and quotes bilingual multiline CSV', () => {
   expect(csv.startsWith('\uFEFFid,')).toBe(true);
   expect(csv).toContain("'=HYPERLINK");
   expect(csv).toContain('中文\n""引号""');
-  expect(csv.split('\r\n')[0].split(',')).toHaveLength(19);
+  expect(csv.split('\r\n')[0].split(',')).toHaveLength(21);
 });
 it('counts organizations rather than markers and retains inactive records', () => {
   const a = {
@@ -42,4 +42,21 @@ it('counts organizations rather than markers and retains inactive records', () =
   expect(s.byCategory).toEqual({ community_culture: 1, media: 1 });
   expect(s.byActivity.inactive).toBe(1);
   expect(serializeCsv(d)).toContain('inactive');
+});
+
+it('includes explicit interview provenance in the full CSV', () => {
+  const a = {
+    ...records[0],
+    profile_basis: 'both',
+    interview: {
+      excerpt: { en: 'Approved fictional interview', zh: null },
+      date: '2026-10-12',
+      attribution: 'Example',
+      source_url: 'https://example.org/interview',
+      publication_permission: true,
+    },
+  } as any;
+  const csv = serializeCsv(buildDataset([a], refs, '2026-10-12T00:00:00Z'));
+  expect(csv).toContain('profile_basis,interview');
+  expect(csv).toContain('Approved fictional interview');
 });

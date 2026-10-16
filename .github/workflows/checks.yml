@@ -25,4 +25,4 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /atlas-test
       - run: npm run build
 # No deployment job: public launch remains gated on
-# reviewed real data, working private/submission channels, and quality review.
+# reviewed real data, a working private reporting channel, and quality review.
